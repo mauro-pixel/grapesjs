@@ -2,7 +2,6 @@
 
 ## Development
 
-
 Install dependencies
 
 ```sh
