@@ -16,7 +16,7 @@ import styles from './styles';
 const stopPropagation = e => e.stopPropagation();
 
 export default grapesjs.plugins.add('gjs-preset-webpage','gjs-plugin-ckeditor', (editor, opts = {}) => {
-  
+
   let config = opts;
 
   let defaults = {
