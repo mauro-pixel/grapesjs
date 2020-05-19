@@ -9,6 +9,8 @@
     <script src="https://static.filestackapi.com/v3/filestack-0.1.10.js"></script>
     <script src="https://unpkg.com/grapesjs"></script>
     <script src="dist/grapesjs-preset-webpage.min.js"></script>
+        <script src="node_modules/ckeditor/ckeditor.js"></script>
+    <script src="dist/grapesjs-plugin-ckeditor.min.js"></script>
     <style>
       body,
       html {
@@ -91,9 +93,16 @@
         container: '#gjs',
         fromElement: true,
 
-        plugins: ['gjs-preset-webpage'],
+        plugins: ['gjs-preset-webpage','gjs-plugin-ckeditor'],
         pluginsOpts: {
-          'gjs-preset-webpage': {}
+          'gjs-preset-webpage': {},
+          'gjs-plugin-ckeditor': {
+            position: 'center',
+            options: {
+              language: 'en',
+              //skin: 'moono-dark',
+            }
+          }
         }
       });
     </script>

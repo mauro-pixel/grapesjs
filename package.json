@@ -1,8 +1,8 @@
 {
-  "name": "grapesjs-preset-webpage",
+  "name": "grapesjs-webpage",
   "version": "0.1.11",
-  "description": "GrapesJS Plugin Webpage Preset",
-  "main": "dist/grapesjs-preset-webpage.min.js",
+  "description": "GrapesJS Plugin Webpage ",
+  "main": "dist/grapesjs-preset-webpage.min.js && dist/grapesjs-plugin-ckeditor.min.js",
   "scripts": {
     "lint": "eslint src",
     "v:patch": "npm version --no-git-tag-version patch",
@@ -32,7 +32,8 @@
     ]
   },
   "peerDependencies": {
-    "grapesjs": "0.x"
+    "grapesjs": "0.x",
+    "ckeditor": "4.x"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -47,10 +48,12 @@
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
+    "ckeditor": "^4.12.1",
     "grapesjs-aviary": "^0.1.2",
     "grapesjs-blocks-basic": "^0.1.7",
     "grapesjs-component-countdown": "^0.1.2",
     "grapesjs-navbar": "^0.1.5",
+    "grapesjs-plugin-ckeditor": "0.0.9",
     "grapesjs-plugin-export": "^0.1.5",
     "grapesjs-plugin-filestack": "^0.1.1",
     "grapesjs-plugin-forms": "^0.3.5"
