@@ -1,14 +1,14 @@
 {
   "name": "grapesjs-webpage",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "description": "GrapesJS Plugin Webpage ",
-  "main": "dist/grapesjs-preset-webpage.min.js && dist/grapesjs-plugin-ckeditor.min.js",
+  "main": "dist/grapesjs.min.js",
   "scripts": {
     "lint": "eslint src",
     "v:patch": "npm version --no-git-tag-version patch",
     "build": "npm run v:patch && webpack --env.production && npm run build:css",
     "start": "webpack-dev-server --open --progress --colors & npm run build:css -- -w",
-    "build:css": "node-sass src/style/main.scss dist/grapesjs-preset-webpage.min.css --output-style compressed"
+    "build:css": "node-sass src/style/main.scss dist/grapesjs.min.css --output-style compressed"
   },
   "repository": {
     "type": "git",
