@@ -3,7 +3,7 @@ export default (editor, config) => {
   const toAdd = name => config.blocks.indexOf(name) >= 0;
 
   toAdd('link-block') && bm.add('link-block', {
-    category: 'Basic',
+    category: 'Prueba',
     label: 'Link Block',
     attributes: { class: 'fa fa-link' },
     content: {
@@ -21,7 +21,7 @@ export default (editor, config) => {
 
   toAdd('quote') && bm.add('quote', {
     label: 'Quote',
-    category: 'Basic',
+    category: 'Prueba',
     attributes: { class: 'fa fa-quote-right' },
     content: `<blockquote class="quote">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore ipsum dolor sit
