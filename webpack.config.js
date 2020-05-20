@@ -1,5 +1,4 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const pkg = require('./package.json');
 const webpack = require('webpack');
 const fs = require('fs');
@@ -7,10 +6,9 @@ const name = pkg.name;
 let plugins = [];
 
 module.exports = (env = {}) => {
-
   if (env.production) {
     plugins = [
-     //new webpack.optimize.UglifyJsPlugin({ minimize: false, compressor: { warnings: false }}),
+      //new webpack.optimize.UglifyJsPlugin({ minimize: true, compressor: { warnings: false }}),
       new webpack.BannerPlugin(`${name} - ${pkg.version}`),
     ]
   } else {

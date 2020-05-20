@@ -14,4 +14,3 @@ Start the dev server
 $ npm start
 ```
 
-

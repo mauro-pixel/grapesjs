@@ -9,21 +9,22 @@ import pluginFilestack from 'grapesjs-plugin-filestack';
 
 import commands from './commands';
 import blocks from './blocks';
+import loadBlocks1 from'./blocks/block-basic'
+import loadBlocks2 from './blocks/block-navbar';
 import components from './components';
+import loadComponents from './components/component-navbar';
 import panels from './panels';
 import styles from './styles';
 
-const stopPropagation = e => e.stopPropagation();
+import { hNavbarRef } from './consts';
 
-export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) => {
-
+export default grapesjs.plugins.add('grapesjs-blocks-basic','grapesjs-navbar', (editor, opts = {}) => {
+  
   let config = opts;
 
   let defaults = {
-
-
     // Which blocks to add
-    blocks: ['link-block', 'quote', 'text-basic'],
+    blocks: ["column1", "column2", "column3", "text", "image"],
 
     // Modal import title
     modalImportTitle: 'Import',
@@ -72,7 +73,22 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
 
     // `grapesjs-navbar` plugin options
     // By setting this option to `false` will avoid loading the plugin
-    navbarOpts: {},
+    navbarOpts: {
+      blocks: [hNavbarRef],
+      defaultStyle: 1,
+      navbarClsPfx: 'navbar',
+      labelNavbar: 'Navbar',
+      labelNavbarContainer: 'Navbar Container',
+      labelMenu: 'Navbar Menu',
+      labelMenuLink: 'Menu link',
+      labelBurger: 'Burger',
+      labelBurgerLine: 'Burger Line',
+      labelNavbarBlock: 'Navbar',
+      labelNavbarCategory: 'Navbar',
+      labelHome: 'Home',
+      labelAbout: 'Acerca',
+      labelContact: 'Contacto',
+    },
 
     // `grapesjs-component-countdown` plugin options
     // By setting this option to `false` will avoid loading the plugin
@@ -95,7 +111,6 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
     // Filestack library should be included manually
     // By setting this option to `false` will avoid loading the plugin
     filestackOpts: 0,
-
   };
 
   // Load defaults
@@ -114,6 +129,27 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
     filestackOpts
   } = config;
 
+  const config1 = {
+    blocks: [
+      'column1',
+      'column2',
+      'column3',
+      'text',
+      'image'
+    ],
+    flexGrid: 0,
+    stylePrefix: 'gjs-',
+    addBasicStyle: true,
+    category: 'BasicO',
+    labelColumn1: '1 Column',
+    labelColumn2: '2 Columns',
+    labelColumn3: '3 Columns',
+    labelText: 'Text',
+    labelImage: 'Image',
+    rowHeight: 75,
+    ...opts
+  };
+
   // Load plugins
   blocksBasicOpts && pluginBlocks(editor, blocksBasicOpts);
   navbarOpts && pluginNavbar(editor, navbarOpts);
@@ -125,9 +161,13 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
 
   // Load components
   components(editor, config);
+  loadComponents(editor, config);
 
   // Load blocks
   blocks(editor, config);
+  loadBlocks1(editor, config1);
+  loadBlocks2(editor, config);
+
 
   // Load commands
   commands(editor, config);

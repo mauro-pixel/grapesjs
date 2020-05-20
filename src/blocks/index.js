@@ -3,7 +3,7 @@ export default (editor, config) => {
   const toAdd = name => config.blocks.indexOf(name) >= 0;
 
   toAdd('link-block') && bm.add('link-block', {
-    category: 'Basic',
+    category: 'Prueba',
     label: 'Link Block',
     attributes: { class: 'fa fa-link' },
     content: {
@@ -21,7 +21,7 @@ export default (editor, config) => {
 
   toAdd('quote') && bm.add('quote', {
     label: 'Quote',
-    category: 'Basic',
+    category: 'Prueba',
     attributes: { class: 'fa fa-quote-right' },
     content: `<blockquote class="quote">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore ipsum dolor sit
@@ -29,8 +29,18 @@ export default (editor, config) => {
   });
 
   toAdd('text-basic') && bm.add('text-basic', {
-    category: 'Basic',
+    category: 'Prueba',
     label: 'Text section',
+    attributes: { class: 'gjs-fonts gjs-f-h1p' },
+    content: `<section class="bdg-sect">
+      <h1 class="heading">Insert title here</h1>
+      <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+      </section>`
+  });
+
+  toAdd('navbar') && bm.add('navbar', {
+    category: 'Prueba',
+    label: 'Navbar',
     attributes: { class: 'gjs-fonts gjs-f-h1p' },
     content: `<section class="bdg-sect">
       <h1 class="heading">Insert title here</h1>
