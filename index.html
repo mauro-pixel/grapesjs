@@ -2,14 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Webpage</title>
+    <title>GrapesJS Preset Webpage</title>
     <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
     <link href="dist/grapesjs-preset-webpage.min.css" rel="stylesheet">
     <script src="//feather.aviary.com/imaging/v3/editor.js"></script>
     <script src="https://static.filestackapi.com/v3/filestack-0.1.10.js"></script>
     <script src="https://unpkg.com/grapesjs"></script>
-    <script src="/dist/dist/grapesjs-preset-webpage.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="dist/dist/grapesjs-preset-webpage.min.js"></script>
     <style>
       body,
       html {
@@ -22,7 +21,7 @@
 
     <div id="gjs" style="height:0px; overflow:hidden">
       <div class="panel">
-        <h1 class="welcome">Bienvenido a </h1>
+        <h1 class="welcome">Welcome to</h1>
         <div class="big-title">
           <svg class="logo" viewBox="0 0 100 100">
             <path d="M40 5l-12.9 7.4 -12.9 7.4c-1.4 0.8-2.7 2.3-3.7 3.9 -0.9 1.6-1.5 3.5-1.5 5.1v14.9 14.9c0 1.7 0.6 3.5 1.5 5.1 0.9 1.6 2.2 3.1 3.7 3.9l12.9 7.4 12.9 7.4c1.4 0.8 3.3 1.2 5.2 1.2 1.9 0 3.8-0.4 5.2-1.2l12.9-7.4 12.9-7.4c1.4-0.8 2.7-2.2 3.7-3.9 0.9-1.6 1.5-3.5 1.5-5.1v-14.9 -12.7c0-4.6-3.8-6-6.8-4.2l-28 16.2"/>
@@ -30,8 +29,8 @@
           <span>GrapesJS</span>
         </div>
         <div class="description">
-          Este es un contenido demo de index.html. 
-          Para el desarrollo, no debe editar este archivo, en su lugar puede copielo y cambiele el nombre a index.html, en el proximo inicio del servidor se servira el nuevo archivo, y git lo ignorara.
+          This is a demo content from index.html. For the development, you shouldn't edit this file, instead you can
+          copy and rename it to _index.html, on next server start the new file will be served, and it will be ignored by git.
         </div>
       </div>
       <style>
@@ -92,16 +91,11 @@
         container: '#gjs',
         fromElement: true,
 
-        plugins: ['gjs-blocks-basic','gjs-navbar'],
+        plugins: ['gjs-preset-webpage'],
         pluginsOpts: {
-          'gjs-blocks-basic': {},
-          'gjs-navbar': {}
+          'gjs-preset-webpage': {}
         }
       });
-       window.editor = editor;
     </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>  
   </body>
 </html>
