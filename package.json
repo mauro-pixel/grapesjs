@@ -1,8 +1,8 @@
 {
   "name": "grapesjs-preset-webpage",
-  "version": "0.1.14",
+  "version": "0.1.25",
   "description": "GrapesJS Plugin Webpage Preset",
-  "main": "dist/dist/grapesjs-preset-webpage.min.js",
+  "main": "dist/grapesjs-preset-webpage.min.js",
   "scripts": {
     "lint": "eslint src",
     "v:patch": "npm version --no-git-tag-version patch",
