@@ -1,12 +1,19 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const pkg = require('./package.json');
 const webpack = require('webpack');
 const fs = require('fs');
+const path = require('path');
 const name = pkg.name;
 let plugins = [];
+let optimization = {};
 
 module.exports = (env = {}) => {
-  if (env.production) {
+
+  const isProd = env.production;
+
+  if (isProd) {
+
     plugins = [
       //new webpack.optimize.UglifyJsPlugin({ minimize: true, compressor: { warnings: false }}),
       new webpack.BannerPlugin(`${name} - ${pkg.version}`),
@@ -22,18 +29,20 @@ module.exports = (env = {}) => {
   return {
     entry: './src',
     output: {
-        filename: `./dist/${name}.min.js`,
-        library: name,
-        libraryTarget: 'umd',
+      filename: `./dist/${name}.min.js`,
+      library: name,
+      libraryTarget: 'umd',
     },
     module: {
       rules: [{
-          test: /\.js$/,
-          loader: 'babel-loader',
-          include: /src/,
+        test: /\.js$/,
+        loader: 'babel-loader',
+        include: /src/,
       }],
     },
-    externals: {'grapesjs': 'grapesjs'},
+    externals: {
+      'grapesjs': 'grapesjs'
+    },
     plugins: plugins,
     optimization: {
       minimize: false

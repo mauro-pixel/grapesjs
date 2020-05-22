@@ -18,7 +18,7 @@ export default grapesjs.plugins.add('gjs-preset-webpage', (editor, opts = {}) =>
 
   let defaults = {
     // Which blocks to add
-    blocks: ['footer','jumbotron','slider','template'],
+    blocks: ['footer','jumbotron','slider','template','address','columns-3','navbar-claro','navbar-azul'],
 
     // Modal import title
     modalImportTitle: 'Import',
